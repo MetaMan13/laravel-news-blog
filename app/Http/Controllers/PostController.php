@@ -11,7 +11,8 @@ class PostController extends Controller
     public function index()
     {
         // Get 5 latest posts
-        $posts = Post::orderBy('id', 'DESC')->take(5)->get();
+        $posts = Post::orderBy('id', 'DESC')->take(17)->get();
+        // dd($posts);
         return view('welcome', ['posts' => $posts]);
     }
 }

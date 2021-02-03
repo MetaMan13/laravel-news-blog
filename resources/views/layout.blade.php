@@ -7,7 +7,7 @@
     <title>Document</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="text-gray-600">
     @yield('content')
     <script src="https://kit.fontawesome.com/3d582cbdd1.js" crossorigin="anonymous"></script>
 </body>
