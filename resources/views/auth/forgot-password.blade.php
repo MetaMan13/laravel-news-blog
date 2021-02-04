@@ -1,9 +1,10 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <div class="h-32 w-52 flex flex-col justify-center align-center">
+                <i class="fas fa-blog text-5xl font-semibold text-green-400 mx-auto"></i>
+                <a href="/" class="mx-auto pt-4">Return home</a>
+            </div>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">

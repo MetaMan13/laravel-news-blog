@@ -14,8 +14,12 @@
                 <div>
                     <ul class="flex flex-row items-center h-full">
                         <li class="mr-10"><a href="/" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Home</a></li>
-                        <li class="mr-10"><a href="/login" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Login</a></li>
-                        <li><a href="/register" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Register</a></li>
+                        @if (Auth::check())
+                            <li class="mr-10"><a href="/dashboard" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Dashboard</a></li>
+                        @else
+                            <li class="mr-10"><a href="/login" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Login</a></li>
+                            <li><a href="/register" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Register</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -88,9 +92,9 @@
                                 <img src="/images/test-image.jpg" alt="" class="block h-full">
                             </div>
                             <div class="row-start-5 row-end-7">
-                                <p class="text-sm pt-2">{{ $posts[1]->created_at}}</p>
+                                <p class="text-sm pt-2">{{ $posts[0]->created_at}}</p>
                                 <a class="text-lg font-semibold pt-2 hover:text-green-400 transition duration-300 ease-in-out" href="#">
-                                    {{ $posts[1]->title}}
+                                    {{ $posts[0]->title}}
                                 </a>
                                 <div class="pt-2">
                                     <a href="#" class="text-sm p-0.5 hover:text-green-400 transition duration-300 ease-in-out">Breaking news</a>
@@ -129,9 +133,9 @@
                                 <img src="/images/test-image.jpg" alt="" class="block h-full">
                             </div>
                             <div class="row-start-5 row-end-7">
-                                <p class="text-sm pt-2">{{ $posts[1]->created_at}}</p>
+                                <p class="text-sm pt-2">{{ $posts[2]->created_at}}</p>
                                 <a class="text-lg font-semibold pt-2 hover:text-green-400 transition duration-300 ease-in-out" href="#">
-                                    {{ $posts[1]->title}}
+                                    {{ $posts[2]->title}}
                                 </a>
                                 <div class="pt-2">
                                     <a href="#" class="text-sm p-0.5 hover:text-green-400 transition duration-300 ease-in-out">Breaking news</a>
@@ -159,12 +163,12 @@
 
                         <div class="col-start-1 col-end-2 row-span-6 w-8/12 justify-self-start">
                             <img src="/images/test-image.jpg" alt="" class="block">
-                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[7]->title }}</a>
+                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[3]->title }}</a>
                         </div>
                         
                         <div class="col-start-2 col-end-3 row-span-6 w-8/12 justify-self-start">
                             <img src="/images/test-image.jpg" alt="" class="block">
-                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[8]->title }}</a>
+                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[4]->title }}</a>
                         </div>
                     </div>
                     <div class="col-start-4 col-end-7 row-start-5 row-end-7 grid grid-cols-2 grid-rows-6">
@@ -174,12 +178,12 @@
 
                         <div class="col-start-1 col-end-2 row-span-6 w-8/12 justify-self-start">
                             <img src="/images/test-image.jpg" alt="" class="block">
-                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[9]->title }}</a>
+                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[5]->title }}</a>
                         </div>
                         
                         <div class="col-start-2 col-end-3 row-span-6 w-8/12 justify-self-start">
                             <img src="/images/test-image.jpg" alt="" class="block">
-                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[10]->title }}</a>
+                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[6]->title }}</a>
                         </div>
                     </div>
                     <div class="col-start-7 col-end-10 row-start-5 row-end-7 grid grid-cols-2 grid-rows-6">
@@ -189,12 +193,12 @@
 
                         <div class="col-start-1 col-end-2 row-span-6 w-8/12 justify-self-start">
                             <img src="/images/test-image.jpg" alt="" class="block">
-                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[11]->title }}</a>
+                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[7]->title }}</a>
                         </div>
                         
                         <div class="col-start-2 col-end-3 row-span-6 w-8/12 justify-self-start">
                             <img src="/images/test-image.jpg" alt="" class="block">
-                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[12]->title }}</a>
+                            <a href="#" class="text-xs font-semibold hover:text-green-400 transition duration-300 ease-in-out">{{ $posts[8]->title }}</a>
                         </div>
                     </div>
                     <div class="col-start-10 col-end-13 row-start-5 row-end-7 grid grid-cols-2 grid-rows-6 bg-gray-100">

@@ -9,6 +9,6 @@
 </head>
 <body class="text-gray-600">
     @yield('content')
-    <script src="https://kit.fontawesome.com/3d582cbdd1.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/3d582cbdd1.js" crossorigin="anonymous"></script>
 </body>
 </html>

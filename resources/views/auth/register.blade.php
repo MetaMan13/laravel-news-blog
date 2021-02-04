@@ -1,9 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                <h3>Register now</h3>
+            <a href="/" class="p-4">
+                <i class="fas fa-blog text-5xl font-semibold text-green-400"></i>
+                <h3 class="text-lg text-center mt-2">Register</h3>
             </a>
         </x-slot>
 
