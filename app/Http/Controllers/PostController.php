@@ -12,7 +12,6 @@ class PostController extends Controller
     {
         // Get 5 latest posts
         $posts = Post::orderBy('id', 'DESC')->take(17)->get();
-        // dd($posts);
         return view('welcome', ['posts' => $posts]);
     }
 }
