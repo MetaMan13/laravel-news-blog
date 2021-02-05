@@ -60,7 +60,7 @@
                             </li>
                             <li class="mb-2">
                                 <i class="fas fa-money-bill-alt text-lg"></i>
-                                <a href="#" class="text-lg pl-1 hover:text-green-400 transition duration-300 ease-in-out">Finance</a>
+                                <a href="/finance" class="text-lg pl-1 hover:text-green-400 transition duration-300 ease-in-out">Finance</a>
                             </li>
                             <li class="mb-2">
                                 <i class="fab fa-pagelines text-lg"></i>
