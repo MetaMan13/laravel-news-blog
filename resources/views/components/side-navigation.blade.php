@@ -6,58 +6,58 @@
         {{-- Sidebar hover component start --}}
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-globe-europe text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Breaking news</a>
+            <a href="/breaking-news" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Breaking news</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         {{-- Sidebar hover component  --}}
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-map-marker-alt text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Local</a>
+            <a href="/local" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Local</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-smile-beam text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Positive</a>
+            <a href="/positive" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Positive</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-microscope text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Science</a>
+            <a href="/science" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Science</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-heartbeat text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Health</a>
+            <a href="/health" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Health</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-futbol text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Sport</a>
+            <a href="/sport" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Sport</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-money-bill-alt text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Finance</a>
+            <a href="/finance" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Finance</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fab fa-pagelines text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Lifestyle</a>
+            <a href="/lifestyle" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Lifestyle</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-landmark text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Politics</a>
+            <a href="/politics" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Politics</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-balance-scale-right text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Crime</a>
+            <a href="/crime" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Crime</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
         <li class="mb-2 group grid grid-cols-8 grid-rows-1">
             <i class="fas fa-camera text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1"></i>
-            <a href="#" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Celebrity</a>
+            <a href="/celebrity" class="text-lg group-hover:text-gray-900 transition duration-250 ease-in-out col-span-6 self-center ml-1">Celebrity</a>
             <i class="fas fa-caret-left text-gray-50 self-center group-hover:text-gray-600 transition duration-250 ease-in-out pt-1"></i>
         </li>
     </ul>

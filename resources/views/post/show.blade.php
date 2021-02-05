@@ -8,7 +8,15 @@
                 <div class="h-full col-span-1">
                     @include('components.side-navigation')
                 </div>
-                <div class="bg-red-100 h-full col-span-6"></div>
+                <div class="bg-red-100 h-full col-span-6">
+                    @foreach ($posts as $post)
+                        <h3>{{ $post->id}}</h3>
+                        <h3>{{ $post->title}}</h3>
+                        @foreach ($post->tags as $tag)
+                            <h5>{{ $tag->name }}</h5>
+                        @endforeach
+                    @endforeach
+                </div>
                 <div class="bg-red-300 h-full col-span-1"></div>
             </div>
         </div>
