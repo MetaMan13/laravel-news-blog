@@ -1,4 +1,4 @@
-<div class="col-start-1 col-end-25 row-start-1 row-end-3 border-b border-gray-900">
+<div class="col-start-1 col-end-25 row-start-1 row-end-3 border-b border-gray-200 bg-white">
     <div class="h-full w-11/12 mx-auto flex justify-between">
         <div class="flex items-center">
             <a href="/" class="flex">
