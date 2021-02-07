@@ -18,11 +18,11 @@
         </x-side-navigation.container>
         <x-posts-container>
             <x-posts.posts-category-title>
-                Breaking news
+                {{ $route }}
             </x-posts.posts-category-title>
             <x-posts.posts-content>
                 @foreach ($posts as $post)
-                    <x-posts.posts-item name="{{ $post->title }}">
+                    <x-posts.posts-item name="{{ $post->title }}" body="{{ $post->body }}">
                         @foreach ($post->tags as $tag)
                         <x-posts-item-tag>
                             {{ $tag->name}}

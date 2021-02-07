@@ -13,7 +13,7 @@ class PostsItemTag extends Component
      */
     public function __construct()
     {
-        //
+
     }
 
     /**

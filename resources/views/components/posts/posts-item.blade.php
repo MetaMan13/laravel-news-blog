@@ -9,6 +9,6 @@
     <div class="h-80 bg-local bg-cover bg-no-repeat" style="background-image: url('/images/big-image.jpg')"></div>
     <div class="mt-4">
         {{-- POST BODY --}}
-        <p class="overflow-clip overflow-hidden h-24 text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum iure deserunt ea ipsa quasi est animi facere, consequatur saepe facilis magni porro, voluptatibus iste earum. Beatae id eveniet ad quisquam quod enim laudantium tempora culpa dolor cupiditate quas assumenda ipsum cum voluptates, pariatur possimus maiores unde nulla? Voluptate vitae asperiores quae in quasi. Odit nisi minus facere laborum incidunt vitae cumque reprehenderit earum! Nesciunt ex exercitationem unde sunt sit autem eveniet? Ratione, quia? Distinctio explicabo nam exercitationem earum, repudiandae delectus quaerat minima sapiente quod animi odio eum corrupti possimus at ipsam repellendus nesciunt obcaecati qui recusandae blanditiis ex commodi esse.</p>
+        <p class="overflow-clip overflow-hidden h-24 text-md">{{ $body }}</p>
     </div>
 </div>

@@ -28,11 +28,18 @@ class PostController extends Controller
             fetched route name dashes with white space in order to retrieve posts with an tag that has dashes
         */
             $tag = preg_replace('/\-/', ' ', $tag);
+            $route = ucfirst($tag);
         /*
             Since the route contains a tag name we search for the post/news using the Tags model's defined hasMany relationship.
             The request is 404 if the tag does not exist!
         */
             $posts = Tags::where('name', $tag)->firstOrFail()->posts;
-            return view('post.show', ['posts' => $posts]);
+            return view('post.show', ['posts' => $posts, 'route' => $route]);
+    }
+
+    public function single($id)
+    {
+        $post = Post::where('id', $id)->firstOrFail();
+        return view('post.single', ['post' => $post]);
     }
 }

@@ -25,4 +25,5 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/post/{id}', 'App\Http\Controllers\PostController@single');
 Route::get('/{tag}', 'App\Http\Controllers\PostController@show');
