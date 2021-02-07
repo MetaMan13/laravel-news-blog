@@ -41,6 +41,6 @@ class SideNavigationItem extends Component
      */
     public function render()
     {
-        return view('components.side-navigation-item');
+        return view('components.side-navigation.item');
     }
 }

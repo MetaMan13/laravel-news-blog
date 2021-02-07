@@ -1,25 +1,37 @@
-@extends('layout')
+<x-layout>
 
-@section('content')
-    <div class="h-screen w-full grid grid-cols-24 grid-rows-24 bg-gray-50">
-        @include('components.navigation')
-        <div class="col-start-1 col-end-25 row-start-3 row-end-25">
-            <div class="h-full w-11/12 mx-auto grid grid-cols-8">
-                <div class="h-full col-span-1">
-                    @include('components.side-navigation')
-                </div>
-                <div class="bg-red-100 h-full col-span-6">
-                    @foreach ($posts as $post)
-                        <h3>{{ $post->id}}</h3>
-                        <h3>{{ $post->title}}</h3>
-                        <h3>Posted by: {{ $post->user['name']}}</h3>
+    <x-navigation/>
+
+    <x-content-container>
+        <x-side-navigation.container>
+            <x-side-navigation-item route="breaking-news" name="Breaking News" iconName="globe"></x-side-navigation-item>
+            <x-side-navigation-item route="local" name="Local" iconName="location"></x-side-navigation-item>
+            <x-side-navigation-item route="positive" name="Positive" iconName="positive"></x-side-navigation-item>
+            <x-side-navigation-item route="science" name="Science" iconName="science"></x-side-navigation-item>
+            <x-side-navigation-item route="health" name="Health" iconName="health"></x-side-navigation-item>
+            <x-side-navigation-item route="sport" name="Sport" iconName="sport"></x-side-navigation-item>
+            <x-side-navigation-item route="finance" name="Finance" iconName="finance"></x-side-navigation-item>
+            <x-side-navigation-item route="lifestyle" name="Lifestyle" iconName="lifestyle"></x-side-navigation-item>
+            <x-side-navigation-item route="politics" name="Politics" iconName="politics"></x-side-navigation-item>
+            <x-side-navigation-item route="crime" name="Crime" iconName="crime"></x-side-navigation-item>
+            <x-side-navigation-item route="celebrity" name="Celebrity" iconName="celebrity"></x-side-navigation-item>
+        </x-side-navigation.container>
+        <x-posts-container>
+            <x-posts.posts-category-title>
+                Breaking news
+            </x-posts.posts-category-title>
+            <x-posts.posts-content>
+                @foreach ($posts as $post)
+                    <x-posts.posts-item name="{{ $post->title }}">
                         @foreach ($post->tags as $tag)
-                            <h5>{{ $tag->name }}</h5>
+                        <x-posts-item-tag>
+                            {{ $tag->name}}
+                        </x-posts-item-tag>
                         @endforeach
-                    @endforeach
-                </div>
-                <div class="bg-red-300 h-full col-span-1"></div>
-            </div>
-        </div>
-    </div>
-@endsection
+                    </x-posts.posts-item>         
+                @endforeach
+            </x-posts.posts-content>
+        </x-posts-container>
+    </x-content-container>
+
+</x-layout>

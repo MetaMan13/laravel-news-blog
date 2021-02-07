@@ -28357,6 +28357,14 @@ select {
   grid-row: 1 / -1;
 }
 
+.row-span-10 {
+  grid-row: span 10 / span 10;
+}
+
+.row-span-11 {
+  grid-row: span 11 / span 11;
+}
+
 .row-span-12 {
   grid-row: span 12 / span 12;
 }
@@ -28391,6 +28399,10 @@ select {
 
 .row-span-20 {
   grid-row: span 20 / span 20;
+}
+
+.row-span-21 {
+  grid-row: span 21 / span 21;
 }
 
 .row-span-22 {
@@ -59318,6 +59330,14 @@ select {
     grid-row: 1 / -1;
   }
 
+  .sm\:row-span-10 {
+    grid-row: span 10 / span 10;
+  }
+
+  .sm\:row-span-11 {
+    grid-row: span 11 / span 11;
+  }
+
   .sm\:row-span-12 {
     grid-row: span 12 / span 12;
   }
@@ -59352,6 +59372,10 @@ select {
 
   .sm\:row-span-20 {
     grid-row: span 20 / span 20;
+  }
+
+  .sm\:row-span-21 {
+    grid-row: span 21 / span 21;
   }
 
   .sm\:row-span-22 {
@@ -90214,6 +90238,14 @@ select {
     grid-row: 1 / -1;
   }
 
+  .md\:row-span-10 {
+    grid-row: span 10 / span 10;
+  }
+
+  .md\:row-span-11 {
+    grid-row: span 11 / span 11;
+  }
+
   .md\:row-span-12 {
     grid-row: span 12 / span 12;
   }
@@ -90248,6 +90280,10 @@ select {
 
   .md\:row-span-20 {
     grid-row: span 20 / span 20;
+  }
+
+  .md\:row-span-21 {
+    grid-row: span 21 / span 21;
   }
 
   .md\:row-span-22 {
@@ -121110,6 +121146,14 @@ select {
     grid-row: 1 / -1;
   }
 
+  .lg\:row-span-10 {
+    grid-row: span 10 / span 10;
+  }
+
+  .lg\:row-span-11 {
+    grid-row: span 11 / span 11;
+  }
+
   .lg\:row-span-12 {
     grid-row: span 12 / span 12;
   }
@@ -121144,6 +121188,10 @@ select {
 
   .lg\:row-span-20 {
     grid-row: span 20 / span 20;
+  }
+
+  .lg\:row-span-21 {
+    grid-row: span 21 / span 21;
   }
 
   .lg\:row-span-22 {
@@ -152006,6 +152054,14 @@ select {
     grid-row: 1 / -1;
   }
 
+  .xl\:row-span-10 {
+    grid-row: span 10 / span 10;
+  }
+
+  .xl\:row-span-11 {
+    grid-row: span 11 / span 11;
+  }
+
   .xl\:row-span-12 {
     grid-row: span 12 / span 12;
   }
@@ -152040,6 +152096,10 @@ select {
 
   .xl\:row-span-20 {
     grid-row: span 20 / span 20;
+  }
+
+  .xl\:row-span-21 {
+    grid-row: span 21 / span 21;
   }
 
   .xl\:row-span-22 {
@@ -182902,6 +182962,14 @@ select {
     grid-row: 1 / -1;
   }
 
+  .\32xl\:row-span-10 {
+    grid-row: span 10 / span 10;
+  }
+
+  .\32xl\:row-span-11 {
+    grid-row: span 11 / span 11;
+  }
+
   .\32xl\:row-span-12 {
     grid-row: span 12 / span 12;
   }
@@ -182936,6 +183004,10 @@ select {
 
   .\32xl\:row-span-20 {
     grid-row: span 20 / span 20;
+  }
+
+  .\32xl\:row-span-21 {
+    grid-row: span 21 / span 21;
   }
 
   .\32xl\:row-span-22 {

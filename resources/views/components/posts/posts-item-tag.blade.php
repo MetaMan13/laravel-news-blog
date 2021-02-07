@@ -1,0 +1,1 @@
+<a href="#" class="text-xs text-start font-semibold hover:text-green-400 transition duration-250 ease-in-out mr-1">{{ $slot }}</a>

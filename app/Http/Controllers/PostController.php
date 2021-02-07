@@ -13,9 +13,8 @@ class PostController extends Controller
     public function index()
     {
         // Get 5 latest posts
-        // $posts = Post::orderBy('id', 'DESC')->limit(9)->get();
-        // return view('welcome', ['posts' => $posts]);
-        return view('welcome');
+        $posts = Post::orderBy('id', 'DESC')->limit(9)->get();
+        return view('welcome', ['posts' => $posts]);
     }
 
     public function show($tag)
