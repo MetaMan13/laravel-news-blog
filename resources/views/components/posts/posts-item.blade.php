@@ -6,7 +6,7 @@
     <div class=" mb-3 mt-1 text-left pl-4">
         {{ $slot }}
     </div>
-    <div class="h-80 bg-local bg-cover bg-no-repeat" style="background-image: url('/images/big-image.jpg')"></div>
+    <div class="h-80 bg-local bg-cover bg-no-repeat bg-center" style="background-image: url('/images/nature.jpg')"></div>
     <div class="mt-3 pl-4 pr-4 text-left">
         {{-- POST BODY --}}
         <p class="overflow-clip overflow-hidden h-24 text-md">{{ $body }}</p>
