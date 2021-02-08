@@ -1,3 +1,19 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@layer utilities{
+    .hide-scrollbar::-webkit-scrollbar{
+        width: 0px;
+        background: transparent;
+    }
+
+    .hide-scrollbar{
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .active{
+        color: #34D399;
+    }
+
+}

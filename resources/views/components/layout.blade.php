@@ -8,7 +8,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="h-screen w-full grid grid-cols-24 grid-rows-24 text-gray-600">
+    <div class="h-screen w-full grid grid-cols-24 grid-rows-24 text-gray-600 bg-red-white">
         {{ $slot }}
     </div>
     <script defer src="https://kit.fontawesome.com/3d582cbdd1.js" crossorigin="anonymous"></script>

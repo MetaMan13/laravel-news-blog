@@ -31728,6 +31728,20 @@ select {
           animation: bounce 1s infinite;
 }
 
+.hide-scrollbar::-webkit-scrollbar{
+  width: 0px;
+  background: transparent;
+}
+
+.hide-scrollbar{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.active{
+  color: #34D399;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

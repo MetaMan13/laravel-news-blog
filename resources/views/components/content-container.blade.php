@@ -1,5 +1,5 @@
-<div class="col-start-1 col-end-25 row-start-3 row-end-25 bg-white">
-    <div class="h-full w-11/12 mx-auto grid grid-cols-8">
+<div class="h-full w-9/12 fixed z-0">
+    <div class="h-full mx-auto grid-cols-8 mt-20 flex flex-col text-center">
         {{ $slot }}
     </div>
 </div>

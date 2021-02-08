@@ -23,6 +23,7 @@ class PostController extends Controller
             Get the $tag var from the uri, converting it to lowercase just in case the users types FiNaNcE when he searches for "finance" post/news
         */
             $tag = strtolower($tag);
+            $match = $tag;
         /*
             Since we have a breaking-news route and a 'breaking-news' tag we need to replace the
             fetched route name dashes with white space in order to retrieve posts with an tag that has dashes
@@ -34,12 +35,25 @@ class PostController extends Controller
             The request is 404 if the tag does not exist!
         */
             $posts = Tags::where('name', $tag)->firstOrFail()->posts;
-            return view('post.show', ['posts' => $posts, 'route' => $route]);
+            return view('post.show', [
+                'posts' => $posts, 'route' => $route,
+                'match' => $match]);
     }
 
     public function single($id)
     {
         $post = Post::where('id', $id)->firstOrFail();
         return view('post.single', ['post' => $post]);
+    }
+
+    public function update($id)
+    {
+        $post = Post::where('id', $id)->firstOrFail();
+        return view('post.edit', ['post' => $post]);
+    }
+
+    public function save($id)
+    {
+        echo "SAVE " . $id;
     }
 }
