@@ -1,4 +1,4 @@
-<div class="ml-20 h-5/6 mt-6 w-auto w-4/12 p-6">
+<div class="ml-20 h-5/6 mt-6 w-4/12 p-6">
     <form>
         <div class="flex flex-col">
             <label for="postTitle" class="text-2xl mb-3 font-semibold">Post title</label>
