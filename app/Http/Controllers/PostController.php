@@ -57,4 +57,19 @@ class PostController extends Controller
             'post' => $post,
             'match' => null]);
     }
+
+    public function save(Request $request)
+    {
+        $body = $request->input('postBody');
+        $title = $request->input('postTitle');
+        $post = Post::find($request->id);
+        $post->title = $title;
+        $post->body = $body;
+        if($post->was_modified === 0)
+        {
+            $post->was_modified = 1;
+        }
+        $post->save();
+        return redirect('/post/' . $request->id);
+    }
 }

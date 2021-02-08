@@ -1,4 +1,4 @@
- <div class="h-full fixed mt-20 z-10 border-r border-gray-200 bg-white">  
+ <div class="h-full fixed mt-20 z-10 bg-white">  
     <div class="pt-6 pb-6">
         <h3 class="text-2xl font-semibold text-gray-800">Categories</h3>
     </div>

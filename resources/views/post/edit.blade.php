@@ -16,7 +16,7 @@
         </x-side-navigation.container>
         <x-content-container>
             <x-posts.posts-content>
-                <x-posts.post-edit-form>
+                <x-posts.post-edit-form title="{{ $post->title }}" body="{{ $post->body }}" id="{{ $post->id }}">
                     @foreach ($post->tags as $tag)
                         <a href="#" class="mr-2">{{ $tag->name }}</a>
                     @endforeach

@@ -27,4 +27,5 @@ require __DIR__.'/auth.php';
 
 Route::get('/post/{id}', 'App\Http\Controllers\PostController@single');
 Route::get('/post/{id}/edit', 'App\Http\Controllers\PostController@update');
+Route::post('/post/{id}/save', 'App\Http\Controllers\PostController@save');
 Route::get('/{tag}', 'App\Http\Controllers\PostController@show');

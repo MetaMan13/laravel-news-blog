@@ -1,4 +1,4 @@
-<div class="h-auto grid-flow-row w-4/12 mt-6 mx-auto bg-white rounded-lg shadow-sm mb-24">
+<div class="h-auto grid-flow-row w-4/12 mt-6 mx-auto bg-white rounded-lg shadow-inner mb-24 border border-gray-200">
     <div class="text-left pt-3 pl-4">
         {{-- ROUTE AND POST TITLE --}}
         <a href="/post/{{$id}}" class="text-2xl font-semibold text-gray-800 hover:text-green-400 transition duration-250 ease-in-out">{{ $name }}</a>
