@@ -14,7 +14,9 @@ class PostController extends Controller
     {
         // Get 5 latest posts
         $posts = Post::orderBy('id', 'DESC')->limit(9)->get();
-        return view('welcome', ['posts' => $posts]);
+        return view('welcome', [
+            'posts' => $posts,
+            'match' => null]);
     }
 
     public function show($tag)
@@ -43,17 +45,16 @@ class PostController extends Controller
     public function single($id)
     {
         $post = Post::where('id', $id)->firstOrFail();
-        return view('post.single', ['post' => $post]);
+        return view('post.single', [
+            'post' => $post,
+            'match' => null]);
     }
 
     public function update($id)
     {
         $post = Post::where('id', $id)->firstOrFail();
-        return view('post.edit', ['post' => $post]);
-    }
-
-    public function save($id)
-    {
-        echo "SAVE " . $id;
+        return view('post.edit', [
+            'post' => $post,
+            'match' => null]);
     }
 }

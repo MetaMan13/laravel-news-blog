@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class SideNavigationItem extends Component
 {
-    public $match;
+    public $match = null;
     public $route;
     public $name;
     public $icons = [

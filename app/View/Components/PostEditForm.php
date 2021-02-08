@@ -6,17 +6,14 @@ use Illuminate\View\Component;
 
 class PostEditForm extends Component
 {
-    public $title;
-    public $body;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $body)
+    public function __construct()
     {
-        $this->title = $title;
-        $this->body = $body;
+        
     }
 
     /**

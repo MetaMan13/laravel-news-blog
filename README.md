@@ -6,6 +6,6 @@
 
 ![Landing page screenshot](https://github.com/MetaMan13/Laravel-news-blog/blob/main/public/images/screenshots/latest_welcome_screenshot.jpg)
 
-### UI Structure Update
+### UI Structure Update #1
 
 ![Landing page screenshot](https://github.com/MetaMan13/Laravel-news-blog/blob/main/public/images/screenshots/ui-structute-update.png)
