@@ -41,7 +41,70 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+
+        /*
+            First we want to validate the request data.
+            The validate method will automaticly redirect
+            back if the required fields are empty.
+            In case the user disables front-end validation.
+        */
+
+        $this->validate($request, [
+            'postTitle' => 'required',
+            'postBody' => 'required'
+        ]);
+
+        /*
+            After we have validated the request we need to make sure that a post( In our database ) with the same title does not already exist.
+            If so we redirect the user to the previous ( create post form page) page.
+        */
+
+        if(Post::where('title', $request->postTitle)->exists())
+        {
+            return back()->with('postTitleError', 'A post with the same title already exists');
+        }
+        else
+        {
+
+            /*
+                If we pass the validation and if we make sure that the post does not exist,
+                we can then create the post and redirect the user back with the flash message "Post created"
+            */
+
+            Post::create([
+                'user_id' => 1,
+                'title' => $request->postTitle,
+                'body' => $request->postBody
+            ]);
+            return back()->with('postCreatedSuccess', 'Post created successfully!');
+        }
+
+        // $post = Post::create()
+
+        // Post::create([
+        //     'user_id' => 1,
+        //     'title' => $request->postTitle,
+        //     'body' => $request->postBody
+        // ]);
+
+
+
+        // if(Post::where('title', $request->postTitle)->exists())
+        // {
+
+        //     return back();
+        //     redirect();
+        //     Post::create([
+        //         'user_id' => 1,
+        //         'title' => $request->postTitle,
+        //         'body' => $request->postBody
+        //     ]);
+        // }
+        // $post = Post::create([
+        //     'user_id' => 1, 
+        //     'title' => $request->postTitle, 
+        //     'body' => $request->postBody
+        // ]);
     }
 
     public function update()
