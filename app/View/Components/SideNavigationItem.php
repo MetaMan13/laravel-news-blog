@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class SideNavigationItem extends Component
 {
-    public $match = null;
+    public $match;
     public $route;
     public $name;
     public $icons = [
@@ -28,7 +28,7 @@ class SideNavigationItem extends Component
      *
      * @return void
      */
-    public function __construct($route, $name, $iconName, $match)
+    public function __construct($route, $name, $iconName, $match = null)
     {
         $this->route = $route;
         $this->name = $name;

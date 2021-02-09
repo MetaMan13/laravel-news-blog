@@ -1,4 +1,4 @@
-<li class="mb-2 group grid grid-cols-8 grid-rows-1 hover:bg-white hover:shadow-md rounded-md w-10/12 p-0.5 transition duration-250 ease-in-out">
+<li class="mb-2 group grid grid-cols-8 grid-rows-1 hover:bg-white hover:shadow-inner rounded-md w-10/12 p-1 border border-transparent hover:border-gray-200 transition duration-250 ease-in-out">
     @if ($route == $match)
         <i class="{{ $icons[$iconName] }} text-lg group-hover:text-green-400 transition duration-250 ease-in-out col-span-1 self-center p-1 active"></i>
     @else    

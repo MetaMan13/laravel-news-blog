@@ -9,7 +9,7 @@
         <ul class="flex flex-row items-center h-full">
             <li class="mr-10"><a href="/" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Home</a></li>
             @if (Auth::check())
-                <li class="mr-10"><a href="/dashboard" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Dashboard</a></li>
+                <li class="mr-10"><a href="/dashboard" class="text-md font-semibold hover:text-green-400 transition duration-250 ease-in-out">Dashboard</a></li>
             @else
                 <li class="mr-10"><a href="/login" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Login</a></li>
                 <li><a href="/register" class="text-md font-semibold hover:text-green-400 transition duration-300 ease-in-out">Register</a></li>
