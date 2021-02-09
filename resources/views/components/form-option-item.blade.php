@@ -1,0 +1,1 @@
+<option value="{{ $id }}" class="text-sm">{{ $slot }}</option>

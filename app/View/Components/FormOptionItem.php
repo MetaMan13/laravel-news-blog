@@ -4,21 +4,16 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class PostEditForm extends Component
+class FormOptionItem extends Component
 {
-    public $title;
-    public $body;
     public $id;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $body, $id)
+    public function __construct($id)
     {
-        $this->title = $title;
-        $this->body = $body;
         $this->id = $id;
     }
 
@@ -29,6 +24,6 @@ class PostEditForm extends Component
      */
     public function render()
     {
-        return view('components.posts.post-edit-form');
+        return view('components.form-option-item');
     }
 }

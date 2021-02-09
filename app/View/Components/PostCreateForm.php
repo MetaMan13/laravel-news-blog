@@ -23,6 +23,6 @@ class PostCreateForm extends Component
      */
     public function render()
     {
-        return view('components.posts.post-create-form');
+        return view('components.post-create-form');
     }
 }
