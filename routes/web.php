@@ -30,8 +30,7 @@ require __DIR__.'/auth.php';
 Route::get('/post', 'App\Http\Controllers\PostController@index');
 Route::get('/post/create', 'App\Http\Controllers\PostController@create');
 Route::post('/post/store', 'App\Http\Controllers\PostController@store');
-Route::get('/post/{id}', 'App\Http\Controllers\PostController@show');
+Route::get('/post/{id}', 'App\Http\Controllers\PostController@single');
+Route::get('/{tag}', 'App\Http\Controllers\PostController@show');
 
 // IMPROVING ROUTES END
-
-Route::get('/{tag}', 'App\Http\Controllers\PostController@show');

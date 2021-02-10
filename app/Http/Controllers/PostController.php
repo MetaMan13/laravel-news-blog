@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Tags;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -16,7 +17,7 @@ class PostController extends Controller
 
     // show -> get request -> find by post id DONE
 
-    // store -> post reuqest -> create article using request data -> redirect
+    // store -> post reuqest -> create article using request data -> redirect DONE
 
     // update -> put request -> find post by id -> update data -> redirect
 
@@ -25,13 +26,39 @@ class PostController extends Controller
     public function index()
     {
         // Display all posts
-        return view('post.index', ['posts' => Post::all()]);
+        return view('post.index', ['posts' => Post::orderBy('created_at', 'DESC')->get()]);
     }
 
-    public function show($id)
+    public function show($tag)
+    {
+        // $route = \Route::current();
+        // dd($route);
+        /*
+            Get the $tag var from the uri, converting it to lowercase just in case the users types FiNaNcE when he searches for "finance" post/news
+        */
+        $tag = strtolower($tag);
+        $match = $tag;
+        /*
+            Since we have a breaking-news route and a 'breaking-news' tag we need to replace the
+            fetched route name dashes with white space in order to retrieve posts with an tag that has dashes
+        */
+            $tag = preg_replace('/\-/', ' ', $tag);
+            $route = ucfirst($tag);
+        /*
+            Since the route contains a tag name we search for the post/news using the Tags model's defined hasMany relationship.
+            The request is 404 if the tag does not exist!
+        */
+            $posts = Tags::where('name', $tag)->firstOrFail()->posts;
+            return view('post.show', [
+                'posts' => $posts, 
+                'route' => $route
+            ]);
+    }
+    
+    public function single($id)
     {
         // Find the post with the provided $id or fail ( 404 page )
-        return view('post.show', ['post' => Post::findOrFail($id)]);
+        return view('post.single', ['post' => Post::findOrFail($id)]);
     }
 
     public function create()
@@ -71,40 +98,23 @@ class PostController extends Controller
                 we can then create the post and redirect the user back with the flash message "Post created"
             */
 
-            Post::create([
+            $post = Post::create([
                 'user_id' => 1,
                 'title' => $request->postTitle,
                 'body' => $request->postBody
-            ]);
+            ]);            
+
+            // After we have created the article we want to insert the selected tags into the posts_tags pivot table
+            
+            foreach($request->tags as $tag)
+            {
+                DB::insert('insert into posts_tags (post_id, tag_id) values(?, ?);', [$post->id, $tag]);
+            }
+
+            // We redirrect the user back with a success message
+
             return back()->with('postCreatedSuccess', 'Post created successfully!');
         }
-
-        // $post = Post::create()
-
-        // Post::create([
-        //     'user_id' => 1,
-        //     'title' => $request->postTitle,
-        //     'body' => $request->postBody
-        // ]);
-
-
-
-        // if(Post::where('title', $request->postTitle)->exists())
-        // {
-
-        //     return back();
-        //     redirect();
-        //     Post::create([
-        //         'user_id' => 1,
-        //         'title' => $request->postTitle,
-        //         'body' => $request->postBody
-        //     ]);
-        // }
-        // $post = Post::create([
-        //     'user_id' => 1, 
-        //     'title' => $request->postTitle, 
-        //     'body' => $request->postBody
-        // ]);
     }
 
     public function update()
@@ -116,62 +126,5 @@ class PostController extends Controller
     public function delete()
     {
 
-    }
-
-
-    // OLD
-
-    public function gigigi($tag)
-    {
-        // /*
-        //     Get the $tag var from the uri, converting it to lowercase just in case the users types FiNaNcE when he searches for "finance" post/news
-        // */
-        //     $tag = strtolower($tag);
-        //     $match = $tag;
-        // /*
-        //     Since we have a breaking-news route and a 'breaking-news' tag we need to replace the
-        //     fetched route name dashes with white space in order to retrieve posts with an tag that has dashes
-        // */
-        //     $tag = preg_replace('/\-/', ' ', $tag);
-        //     $route = ucfirst($tag);
-        // /*
-        //     Since the route contains a tag name we search for the post/news using the Tags model's defined hasMany relationship.
-        //     The request is 404 if the tag does not exist!
-        // */
-        //     $posts = Tags::where('name', $tag)->firstOrFail()->posts;
-        //     return view('post.show', [
-        //         'posts' => $posts, 'route' => $route,
-        //         'match' => $match]);
-    }
-
-    public function single($id)
-    {
-        $post = Post::where('id', $id)->firstOrFail();
-        return view('post.single', [
-            'post' => $post,
-            'match' => null]);
-    }
-
-    public function updatetwo($id)
-    {
-        $post = Post::where('id', $id)->firstOrFail();
-        return view('post.edit', [
-            'post' => $post,
-            'match' => null]);
-    }
-
-    public function save(Request $request)
-    {
-        $body = $request->input('postBody');
-        $title = $request->input('postTitle');
-        $post = Post::find($request->id);
-        $post->title = $title;
-        $post->body = $body;
-        if($post->was_modified === 0)
-        {
-            $post->was_modified = 1;
-        }
-        $post->save();
-        return redirect('/post/' . $request->id);
     }
 }

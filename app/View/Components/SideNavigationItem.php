@@ -28,12 +28,11 @@ class SideNavigationItem extends Component
      *
      * @return void
      */
-    public function __construct($route, $name, $iconName, $match = null)
+    public function __construct($route, $name, $iconName)
     {
         $this->route = $route;
         $this->name = $name;
         $this->iconName = $iconName;
-        $this->match = $match;
     }
 
     /**

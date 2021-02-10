@@ -19,7 +19,7 @@
                 @foreach ($posts as $post)
                 <x-posts.posts-item name="{{ $post->title }}" body="{{ $post->body }}" id="{{$post->id}}">
                     @foreach ($post->tags as $tag)
-                    <x-posts-item-tag>
+                    <x-posts-item-tag name="{{ $tag->name }}">
                         {{ $tag->name}}
                     </x-posts-item-tag>
                     @endforeach
