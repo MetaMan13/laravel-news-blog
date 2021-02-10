@@ -68,7 +68,6 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-
         /*
             First we want to validate the request data.
             The validate method will automaticly redirect
@@ -99,7 +98,7 @@ class PostController extends Controller
             */
 
             $post = Post::create([
-                'user_id' => 1,
+                'user_id' => $request->user()->id,
                 'title' => $request->postTitle,
                 'body' => $request->postBody
             ]);            
@@ -117,9 +116,15 @@ class PostController extends Controller
         }
     }
 
-    public function update()
+    public function update(Request $request)
     {
-
+        // Get the post id
+        // Check if the post belongs to the session user id
+        // IF
+        // Retrieve post data and post tags
+        // Pass the information to the vue
+        // ELSE => 404
+        // dd(auth()->id());
     }
 
 

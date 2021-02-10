@@ -6,7 +6,7 @@
                 <i class="fas fa-check self-center text-white ml-2"></i>
             </div>
         @else
-            <h2 class="text-semibold text-gray-800 text-4xl font-bold">Create new post</h2>
+            <h2 class="text-semibold text-gray-600 text-4xl font-bold">Create new post</h2>
         @endif
     </div>
     <div class="h-5/6 mt-10">

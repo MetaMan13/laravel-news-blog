@@ -28,7 +28,8 @@ require __DIR__.'/auth.php';
 // IMPROVING ROUTES START
 
 Route::get('/post', 'App\Http\Controllers\PostController@index');
-Route::get('/post/create', 'App\Http\Controllers\PostController@create');
+Route::get('/post/create', 'App\Http\Controllers\PostController@create')->middleware(['auth']);
+Route::get('/post/edit', 'App\Http\Controllers\PostController@update')->middleware(['auth']);
 Route::post('/post/store', 'App\Http\Controllers\PostController@store');
 Route::get('/post/{id}', 'App\Http\Controllers\PostController@single');
 Route::get('/{tag}', 'App\Http\Controllers\PostController@show');
