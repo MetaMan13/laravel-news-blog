@@ -118,13 +118,19 @@ class PostController extends Controller
 
     public function update(Request $request)
     {
-        // Get the post id
-        // Check if the post belongs to the session user id
-        // IF
-        // Retrieve post data and post tags
-        // Pass the information to the vue
-        // ELSE => 404
-        // dd(auth()->id());
+        /*
+            First we want to check if the post id belongs to the authenticated user.
+            If the id does not match we redirect the user to a 403 forbidden page
+        */
+        if(Post::findOrFail($request->postId)->user_id != auth()->user()->id)
+        {
+            return abort('403');
+        }else{
+            return view('post.update', [
+                'post' => Post::findOrFail($request->postId),
+                'tags' => Tags::all()
+            ]);
+        }
     }
 
 
