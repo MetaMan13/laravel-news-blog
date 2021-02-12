@@ -17,7 +17,7 @@
         <x-content-container>
             <x-posts.posts-content>
                 @foreach ($posts as $post)
-                <x-posts.posts-item name="{{ $post->title }}" body="{{ $post->body }}" id="{{$post->id}}">
+                <x-posts.posts-item name="{{ $post->title }}" body="{{ $post->body }}" id="{{$post->id}}" userName="{{ $post->user->name }}">
                     @foreach ($post->tags as $tag)
                     <x-posts-item-tag name="{{ $tag->name }}">
                         {{ $tag->name }}

@@ -16,10 +16,10 @@
         </x-side-navigation.container>
         <x-content-container>
             <x-posts.posts-content>
-                <x-posts.posts-item name="{{ $post->title }}" body="{{ $post->body }}" id="{{$post->id}}">
+                <x-posts.posts-item name="{{ $post->title }}" body="{{ $post->body }}" id="{{$post->id}}" userName="{{ $post->user->name }}">
                     @foreach ($post->tags as $tag)
                     <x-posts-item-tag name="{{ $tag->name }}">
-                        {{ $tag->name}}
+                        {{ $tag->name }}
                     </x-posts-item-tag>
                     @endforeach
                 </x-posts.posts-item>         

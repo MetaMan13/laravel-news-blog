@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use stdClass;
 
 class PostsItem extends Component
 {
@@ -10,17 +11,20 @@ class PostsItem extends Component
     public $tags;
     public $body;
     public $id;
+    public $userName;
+    public $comments;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $tags, $body, $id)
+    public function __construct($name, $tags, $body, $id, $userName)
     {
         $this->name = $name;
         $this->tags = $tags;
         $this->body = $body;
         $this->id = $id;
+        $this->userName = $userName;
     }
 
     /**
