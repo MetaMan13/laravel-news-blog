@@ -17,13 +17,23 @@
         <x-content-container>
             <x-posts.posts-content>
                 @foreach ($posts as $post)
-                <x-posts.posts-item name="{{ $post->title }}" body="{{ $post->body }}" id="{{$post->id}}" userName="{{ $post->user->name }}">
-                    @foreach ($post->tags as $tag)
-                    <x-posts-item-tag name="{{ $tag->name }}">
-                        {{ $tag->name}}
-                    </x-posts-item-tag>
-                    @endforeach
-                </x-posts.posts-item>         
+                <x-posts.posts-item id="{{$post->id}}" userName="{{ $post->user->name }}">
+                    <x-posts.posts-title id="{{ $post->id }}">{{ $post->title }}</x-posts.posts-title>
+                    <x-posts.posts-item-tags-container>
+                        @foreach ($post->tags as $tag)
+                        <x-posts-item-tag name="{{ $tag->name }}">
+                            {{ $tag->name }}
+                        </x-posts-item-tag>
+                        @endforeach
+                    </x-posts.posts-item-tags-container>
+                    <x-posts.posts-picture></x-posts.posts-picture>
+                    <x-posts.posts-body>{{ $post->body }}</x-posts.posts-body>
+                    <x-posts.posts-comments-container>
+                        @foreach ($post->comments as $comment)
+                            <x-posts.posts-comment-item userName="{{ $comment->user->name }}">{{ $comment->body }}</x-posts.posts-comment-item>
+                        @endforeach
+                    </x-posts.posts-comments-container>
+                </x-posts.posts-item>     
                 @endforeach
             </x-posts.posts-content>
         </x-content-container>
