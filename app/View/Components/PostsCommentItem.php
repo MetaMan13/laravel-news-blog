@@ -3,9 +3,8 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use stdClass;
 
-class PostsItem extends Component
+class PostsCommentItem extends Component
 {
     public $userName;
     /**
@@ -25,6 +24,6 @@ class PostsItem extends Component
      */
     public function render()
     {
-        return view('components.posts.posts-item');
+        return view('components.posts.posts-comment-item');
     }
 }

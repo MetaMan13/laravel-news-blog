@@ -3,19 +3,18 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use stdClass;
 
-class PostsItem extends Component
+class PostsTitle extends Component
 {
-    public $userName;
+    public $id;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($userName)
+    public function __construct($id)
     {
-        $this->userName = $userName;
+        $this->id = $id;
     }
 
     /**
@@ -25,6 +24,6 @@ class PostsItem extends Component
      */
     public function render()
     {
-        return view('components.posts.posts-item');
+        return view('components.posts.posts-title');
     }
 }
