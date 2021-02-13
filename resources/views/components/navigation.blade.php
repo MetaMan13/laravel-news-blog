@@ -1,4 +1,4 @@
-<div class="fixed h-20 flex justify-between align-content-center w-9/12 z-10 bg-white">
+<div class="fixed h-20 flex justify-between align-content-center w-9/12 z-10">
     <div class="flex items-center">
         <a href="/" class="flex">
             <i class="fas fa-blog text-2xl font-semibold text-green-400"></i>

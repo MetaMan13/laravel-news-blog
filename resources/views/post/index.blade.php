@@ -27,7 +27,6 @@
                         @endforeach
                     </x-posts.posts-item-tags-container>
                     <x-posts.posts-picture></x-posts.posts-picture>
-                    <x-posts.posts-body>{{ $post->body }}</x-posts.posts-body>
                     <x-posts.posts-comments-container>
                         @foreach ($post->comments as $comment)
                             <x-posts.posts-comment-item userName="{{ $comment->user->name }}">{{ $comment->body }}</x-posts.posts-comment-item>
