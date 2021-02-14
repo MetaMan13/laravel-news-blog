@@ -21,7 +21,7 @@ class PostsTagsFactory extends Factory
     public function definition()
     {
         return [
-            'post_id' => $this->faker->numberBetween(1, 100),
+            'post_id' => $this->faker->numberBetween(1, 1000),
             'tag_id' => $this->faker->numberBetween(1, 11)
         ];
     }
