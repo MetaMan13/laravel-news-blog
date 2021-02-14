@@ -27,6 +27,11 @@
                         @endforeach
                     </x-posts.posts-item-tags-container>
                     <x-posts.posts-picture></x-posts.posts-picture>
+                    <x-posts.posts-additional-container>
+                        <x-posts.posts-likes>
+                            {{ count($post->likes) }}
+                        </x-posts.posts-likes>
+                    </x-posts.posts-additional-container>
                     <x-posts.posts-comments-container>
                         @foreach ($post->comments as $comment)
                             <x-posts.posts-comment-item userName="{{ $comment->user->name }}">{{ $comment->body }}</x-posts.posts-comment-item>
