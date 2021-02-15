@@ -2,7 +2,7 @@
     <div class="flex items-center">
         <a href="/" class="flex">
             <i class="fas fa-blog text-2xl font-semibold text-green-400"></i>
-            <h3 class="text-2xl ml-2 font-semibold text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out">Blog</h3>
+            <h3 class="text-2xl ml-2 font-semibold text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out">SPA</h3>
         </a>
     </div>
     <div class="">
