@@ -8,15 +8,17 @@ class PostsEditForm extends Component
 {
     public $postTitle;
     public $postBody;
+    public $postId;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($postTitle, $postBody)
+    public function __construct($postTitle, $postBody, $postId)
     {
         $this->postTitle = $postTitle;
         $this->postBody = $postBody;
+        $this->postId = $postId;
     }
 
     /**

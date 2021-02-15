@@ -17,6 +17,11 @@ class Post extends Model
         'body'
     ];
 
+    public function path()
+    {
+        return route('post.single', $this);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

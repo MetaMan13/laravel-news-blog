@@ -133,9 +133,26 @@ class PostController extends Controller
         }
     }
 
+    public function save(Request $request, $id)
+    {
+        $post = Post::find($id);
+        $post->title = $request->postTitle;
+        $post->body = $request->postBody;
+        $post->save();
+        return redirect('post/' . $id);
+    }
+
 
     public function delete()
     {
 
+    }
+
+    public function validatePost()
+    {
+        return request()->validate([
+            'postTitle' => 'required',
+            'postBody' => 'required'
+        ]);
     }
 }
