@@ -22,8 +22,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            // 'user_id' => \App\Models\User::factory(),
-            'user_id' => $this->faker->numberBetween(1,100),
+            // Updating this to create post and reference existing users in DB
+            'user_id' => \App\Models\User::inRandomOrder()->first()->id,
             'title' => $this->faker->sentence(),
             'body' => $this->faker->text()
         ];

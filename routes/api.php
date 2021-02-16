@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('stats', function(){
-    return[
-        'Amar', 'Bla', 'Laravel', 'Vue'
+Route::get('home', function(){
+    // return \App\Models\Post::orderBy('created_at', 'DESC')->get();
+    return [
+        'posts' => \App\Models\Post::orderBy('created_at', 'DESC')->get(),
     ];
 });
 

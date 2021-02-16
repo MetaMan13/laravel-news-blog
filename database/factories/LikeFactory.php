@@ -22,8 +22,8 @@ class LikeFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->numberBetween(1, 100),
-            'post_id' => $this->faker->numberBetween(1, 1000)
+            'user_id' => \App\Models\User::inRandomOrder()->first()->id,
+            'post_id' => \App\Models\Post::inRandomOrder()->first()->id,
         ];
     }
 }

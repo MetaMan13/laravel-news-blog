@@ -1,11 +1,11 @@
 <template>
-    <div class="h-12 flex md:h-16 bg-white sticky top-0 left-0 z-20 border-b-2 border-gray-200">
+    <div class="h-12 flex md:h-16 sticky top-0 left-0 z-20 border-b-2 border-gray-200 bg-white">
         <div class="h-full flex justify-between px-4 w-full md:mx-auto md:px-6 lg:px-12 xl:px-32">
 
             <!-- Logo -->
             <div class="h-full flex">
                 <i class="fas fa-blog text-xl font-semibold text-green-400 self-center"></i>
-                <h3 class="text-xl ml-2 font-semibold text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out self-center">Blog</h3>
+                <router-link to="/" class="text-xl ml-2 font-semibold text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out self-center">Blog</router-link>
             </div>
 
             <!-- Hamburger icon -->

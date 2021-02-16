@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div id="app" class="min-h-screen sm:w-full bg-red-500 text-gray-600">
+    <div id="app" class="min-h-screen sm:w-full text-gray-600">
         <router-view></router-view>
     </div>
     <script src="{{ asset('js/app.js') }}" defer></script>

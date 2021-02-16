@@ -1884,6 +1884,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1893,8 +1897,20 @@ __webpack_require__.r(__webpack_exports__);
     LeftSideBar: _left_side_bar_LeftSideBar__WEBPACK_IMPORTED_MODULE_1__.default,
     RightSideBar: _right_side_bar_RightSideBar__WEBPACK_IMPORTED_MODULE_2__.default
   },
+  data: function data() {
+    return {
+      posts: []
+    };
+  },
   mounted: function mounted() {
     console.log('Home mounted.');
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('http://127.0.0.1:8000/api/home').then(function (response) {
+      return _this.posts = response.data;
+    })["catch"](console.log);
   }
 });
 
@@ -3122,25 +3138,32 @@ var render = function() {
       _vm._v(" "),
       _c("right-side-bar"),
       _vm._v(" "),
-      _vm._m(0)
+      _c(
+        "div",
+        { staticClass: "min-h-screen md:w-6/12 mx-auto bg-gray-100 z-0" },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "min-h-screen w-full mx-auto px-4 md:px-6 lg:px-10 xl:px-36 pt-6 lg:pt-10 xl:py-16"
+            },
+            _vm._l(_vm.posts, function(post) {
+              return _c("div", { key: post.id, staticClass: "bg-white mb-8" }, [
+                _c("h5", [_vm._v(_vm._s(post.title))]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(post.body))])
+              ])
+            }),
+            0
+          )
+        ]
+      )
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "min-h-screen" }, [
-      _c("div", { staticClass: "bg-gray-100 min-h-screen" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "bg-gray-200 min-h-screen" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "bg-gray-50 min-h-screen" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -3167,7 +3190,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "h-12 flex md:h-16 bg-white sticky top-0 left-0 z-20 border-b-2 border-gray-200"
+        "h-12 flex md:h-16 sticky top-0 left-0 z-20 border-b-2 border-gray-200 bg-white"
     },
     [
       _c(
@@ -3177,7 +3200,27 @@ var render = function() {
             "h-full flex justify-between px-4 w-full md:mx-auto md:px-6 lg:px-12 xl:px-32"
         },
         [
-          _vm._m(0),
+          _c(
+            "div",
+            { staticClass: "h-full flex" },
+            [
+              _c("i", {
+                staticClass:
+                  "fas fa-blog text-xl font-semibold text-green-400 self-center"
+              }),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "text-xl ml-2 font-semibold text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out self-center",
+                  attrs: { to: "/" }
+                },
+                [_vm._v("Blog")]
+              )
+            ],
+            1
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "md:hidden flex" }, [
             _c("i", {
@@ -3249,28 +3292,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "h-full flex" }, [
-      _c("i", {
-        staticClass:
-          "fas fa-blog text-xl font-semibold text-green-400 self-center"
-      }),
-      _vm._v(" "),
-      _c(
-        "h3",
-        {
-          staticClass:
-            "text-xl ml-2 font-semibold text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out self-center"
-        },
-        [_vm._v("Blog")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -3349,7 +3371,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "hidden bg-white h-screen w-3/12 fixed top-0 left-0 z-10 md:block border-r-2 border-gray-200 mt-12 md:mt-16"
+        "hidden h-screen w-3/12 fixed top-0 left-0 z-10 md:block border-r-2 border-gray-200 mt-12 md:mt-16 bg-white"
     },
     [
       _c(
@@ -3511,13 +3533,9 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "hidden bg-white h-screen w-3/12 fixed z-10 right-0 top-0 md:block border-l-2 border-gray-200 mt-12 md:mt-16"
+          "hidden h-screen w-3/12 fixed z-10 right-0 top-0 md:block border-l-2 border-gray-200 mt-12 md:mt-16 bg-white"
       },
-      [
-        _c("div", {
-          staticClass: "md:mr-6 lg:mr-12 xl:mr-32 h-full bg-gray-50"
-        })
-      ]
+      [_c("div", { staticClass: "md:mr-6 lg:mr-12 xl:mr-32 h-full" })]
     )
   }
 ]

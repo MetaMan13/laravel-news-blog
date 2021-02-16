@@ -21,8 +21,8 @@ class PostsTagsFactory extends Factory
     public function definition()
     {
         return [
-            'post_id' => $this->faker->numberBetween(1, 1000),
-            'tag_id' => $this->faker->numberBetween(1, 11)
+            'post_id' => \App\Models\Post::inRandomOrder()->first()->id,
+            'tag_id' => \App\Models\Tags::inRandomOrder()->first()->id,
         ];
     }
 }
