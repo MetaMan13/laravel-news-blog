@@ -1,6 +1,6 @@
 import Home from './components/Home'
 import About from './components/About'
-import NotFound from './components/NotFound'
+import NotFound from './components/errors/NotFound'
 
 export default{
     mode: 'history',

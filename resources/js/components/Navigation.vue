@@ -1,6 +1,6 @@
 <template>
-    <div class="h-12 flex md:h-16 bg-white sticky top-0 left-0">
-        <div class="h-full flex justify-between px-4 w-full md:w-10/12 md:mx-auto md:px-0">
+    <div class="h-12 flex md:h-16 bg-white sticky top-0 left-0 z-20 border-b-2 border-gray-200">
+        <div class="h-full flex justify-between px-4 w-full md:mx-auto md:px-6 lg:px-12 xl:px-32">
 
             <!-- Logo -->
             <div class="h-full flex">
