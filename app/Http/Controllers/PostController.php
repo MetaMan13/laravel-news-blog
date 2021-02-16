@@ -26,7 +26,8 @@ class PostController extends Controller
     public function index()
     {
         // Display all posts
-        return view('post.index', ['posts' => Post::orderBy('created_at', 'DESC')->limit(10)->get()]);
+        // return view('post.index', ['posts' => Post::orderBy('created_at', 'DESC')->limit(10)->get()]);
+        return view('welcome');
     }
 
     public function show($tag)
