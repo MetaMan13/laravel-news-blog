@@ -21,9 +21,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('home', function(){
     // return \App\Models\Post::orderBy('created_at', 'DESC')->get();
-    return [
-        'posts' => \App\Models\Post::orderBy('created_at', 'DESC')->get(),
-    ];
+    // O MY GOD LARAVEL IS SO GOOD !!!!!!!!!!!!! LOL
+    return \App\Models\Post::with([
+            'tags',
+            'user',
+            'likes',
+            'comments'
+        ])->orderBy('created_at', 'DESC')->get();
 });
 
 Route::get('profile', function(){

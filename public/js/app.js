@@ -1888,6 +1888,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1903,9 +1907,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    console.log('Home mounted.');
-  },
-  created: function created() {
     var _this = this;
 
     axios.get('http://127.0.0.1:8000/api/home').then(function (response) {
@@ -3150,9 +3151,21 @@ var render = function() {
             },
             _vm._l(_vm.posts, function(post) {
               return _c("div", { key: post.id, staticClass: "bg-white mb-8" }, [
-                _c("h5", [_vm._v(_vm._s(post.title))]),
+                _c("h4", { staticClass: "text-lg mb-2" }, [
+                  _vm._v("Created by: " + _vm._s(post.user.name))
+                ]),
                 _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(post.body))])
+                _c("h5", { staticClass: "text-md mb-2" }, [
+                  _vm._v("Title: " + _vm._s(post.title))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "mb-2" }, [_vm._v(_vm._s(post.body))]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(post.comments.length))]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(post.likes.length))]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(post.tags.length))])
               ])
             }),
             0

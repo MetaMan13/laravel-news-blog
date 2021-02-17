@@ -1,0 +1,119 @@
+ALL POSTS DATA AND ALL COMMENTS DATA QUERY
+
+    SELECT
+        posts.id AS `post_id`,
+        posts.user_id AS `created_by_user`,
+        posts.title AS `post_title`,
+        posts.body AS `post_body`,
+        comments.user_id AS `commented_by_user`,
+        comments.body AS `comment_body`
+    FROM posts
+    JOIN comments
+    ON posts.id = comments.post_id
+
+ALL POSTS DATA AND COUNT OF ALL COMMENTS AND LIKES QUERY
+
+    SELECT  
+        posts.id AS `post_id`,
+        posts.user_id AS `post_created_by`,
+        posts.title AS `post_title`,
+        posts.body AS `post_body`,
+    (SELECT COUNT(comments.id)
+            FROM comments
+            WHERE comments.post_id = posts.id
+    ) AS `number_of_comments`,
+    (SELECT COUNT(likes.id)
+        FROM likes
+        WHERE likes.post_id = posts.id
+    ) AS `number_of_likes`
+    FROM posts
+
+ALL POSTS DATA AND COUNT OF ALL COMMENTS, LIKES, TAGS QUERY
+
+    SELECT
+        posts.id AS `post_id`,
+        posts.user_id AS `post_created_by`,
+        posts.title AS `post_title`,
+        posts.body AS `post_body`,
+        (SELECT COUNT(comments.id)
+            FROM comments
+            WHERE comments.post_id = posts.id
+        ) AS `number_of_comments`,
+        (SELECT COUNT(likes.id)
+            FROM likes
+            WHERE likes.post_id = posts.id
+        ) AS `number_of_likes`,
+        (SELECT COUNT(posts_tags.id)
+        	FROM posts_tags
+         	WHERE posts_tags.post_id = posts.id
+        ) AS `number_of_tags`
+    FROM posts
+
+SINGLE POST DATA AND ALL COMMENTS DATA QUERY
+
+    SELECT
+        posts.id AS `post_id`,
+        posts.user_id AS `created_by_user`,
+        posts.title AS `post_title`,
+        posts.body AS `post_body`,
+        comments.user_id AS `commented_by_user`,
+        comments.body AS `comment_body`
+    FROM posts
+    JOIN comments
+    ON posts.id = comments.post_id
+    WHERE posts.id = {{ post->id }}
+
+SINGLE POST DATA AND NUMBER OF COMMENTS QUERY
+
+    SELECT
+        posts.id AS `post_id`,
+        posts.user_id AS `created_by_user`,
+        posts.title AS `post_title`,
+        posts.body AS `post_body`,
+        count(comments.id) AS `number_of_comments`
+    FROM posts
+    JOIN comments
+    ON posts.id = comments.post_id
+    WHERE posts.id = 126
+    GROUP BY posts.id, comments.post_id
+
+SINGLE POST DATA AND ALL USERS WHO LIKED IT QUERY
+
+    SELECT
+        posts.id AS `post_id`,
+        posts.user_id AS `created_by_user`,
+        posts.title AS `post_title`,
+        posts.body AS `post_body`,
+        likes.user_id AS `liked_by_user`
+    FROM `posts`
+    JOIN likes
+    ON posts.id = likes.post_id
+    WHERE posts.id = 12
+
+SINGLE POST DATA AND TOTAL NUMBER OF LIKES QUERY
+
+    SELECT
+        posts.id AS `post_id`,
+        posts.user_id AS `created_by_user`,
+        posts.title AS `post_title`,
+        posts.body AS `post_body`,
+    COUNT(likes.id) AS `number_of_likes`
+    FROM `posts`
+    JOIN likes
+    ON posts.id = likes.post_id
+    WHERE posts.id = 12
+
+SINGLE POST ID AND TOTAL NUMBER OF COMMENTS AND LIKES QUERY
+
+    SELECT
+        posts.id,
+        (SELECT COUNT(comments.id)
+            FROM comments
+            WHERE comments.post_id = posts.id
+        ) AS `number_of_comments`,
+        (SELECT COUNT(likes.id)
+            FROM likes
+            WHERE likes.post_id = posts.id
+        ) AS `number_of_likes`
+    FROM posts
+    WHERE posts.id = 126
