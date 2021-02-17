@@ -1892,6 +1892,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3147,26 +3154,55 @@ var render = function() {
             "div",
             {
               staticClass:
-                "min-h-screen w-full mx-auto px-4 md:px-6 lg:px-10 xl:px-36 pt-6 lg:pt-10 xl:py-16"
+                "min-h-screen w-full mx-auto px-4 md:px-6 lg:px-10 xl:px-40 pt-6 lg:pt-10 xl:py-16"
             },
             _vm._l(_vm.posts, function(post) {
-              return _c("div", { key: post.id, staticClass: "bg-white mb-8" }, [
-                _c("h4", { staticClass: "text-lg mb-2" }, [
-                  _vm._v("Created by: " + _vm._s(post.user.name))
-                ]),
-                _vm._v(" "),
-                _c("h5", { staticClass: "text-md mb-2" }, [
-                  _vm._v("Title: " + _vm._s(post.title))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "mb-2" }, [_vm._v(_vm._s(post.body))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(post.comments.length))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(post.likes.length))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(post.tags.length))])
-              ])
+              return _c(
+                "div",
+                {
+                  key: post.id,
+                  staticClass:
+                    "bg-white mb-8 md:mb-10 lg:mb-12 py-4 rounded-md shadow-md"
+                },
+                [
+                  _c(
+                    "h4",
+                    { staticClass: "text-sm font-semibold px-4 lg:px-6 mb-2" },
+                    [_vm._v(_vm._s(post.user.name))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-lg font-bold px-4 mb-2 lg:px-6 text-gray-800"
+                    },
+                    [_vm._v(_vm._s(post.title))]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-md px-4 mb-4 lg:px-6" }, [
+                    _vm._v(_vm._s(post.body))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex px-4 lg:px-6" }, [
+                    _c("div", { staticClass: "flex self-center" }, [
+                      _c("i", { staticClass: "fas fa-thumbs-up self-center" }),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "self-center ml-1" }, [
+                        _vm._v(_vm._s(post.likes.length))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex self-center ml-5" }, [
+                      _c("i", { staticClass: "fas fa-comments self-center" }),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "self-center ml-1" }, [
+                        _vm._v(_vm._s(post.comments.length))
+                      ])
+                    ])
+                  ])
+                ]
+              )
             }),
             0
           )
