@@ -21,8 +21,8 @@
             <!-- Desktop menu -->
             <div class="hidden md:flex md:flex-row h-full">
                 <router-link to="/" class="self-center font-semibold mr-8 hover:text-green-400 transition duration-300 ease-in-out">Home</router-link>
-                <router-link to="/sad" class="self-center font-semibold mr-8 hover:text-green-400 transition duration-300 ease-in-out">Profile</router-link>
-                <router-link to="/" class="self-center font-semibold hover:text-green-400 transition duration-300 ease-in-out">Posts</router-link>
+                <router-link to="/signin" class="self-center font-semibold mr-8 hover:text-green-400 transition duration-300 ease-in-out">Sign In</router-link>
+                <router-link to="/register" class="self-center font-semibold hover:text-green-400 transition duration-300 ease-in-out">Register</router-link>
             </div>
 
         </div>

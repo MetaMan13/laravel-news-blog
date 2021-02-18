@@ -9,9 +9,6 @@ const app = new Vue({
     el: '#app',
     router: new VueRouter(routes),
     created(){
-        // axios
-        // .get('http://127.0.0.1:8000/api/profile?api_token=sdasdasdasdas')
-        // .then(response => console.log(response))
-        // .catch(console.log);
+        
     }
 });

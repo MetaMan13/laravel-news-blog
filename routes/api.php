@@ -34,3 +34,9 @@ Route::get('profile', function(){
     // return User::where('email', 'amarimamovicv2@gmail.com')->get();
     return request()->user();
 })->middleware('auth:api');
+
+Route::post('signin', function(){
+    // return User::where('email', 'amarimamovicv2@gmail.com')->get();
+    // return request()->user();
+    return request();
+});

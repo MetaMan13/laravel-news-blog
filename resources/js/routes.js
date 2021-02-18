@@ -1,6 +1,6 @@
 import Home from './components/Home'
-import About from './components/About'
 import NotFound from './components/errors/NotFound'
+import Signin from './components/Signin.vue'
 
 export default{
     mode: 'history',
@@ -11,11 +11,11 @@ export default{
         },
         {
             path: '/',
-            component: Home
+            component: Home,
         },
         {
-            path: '/about',
-            component: About
+            path: '/signin',
+            component: Signin,
         }
     ]
 }

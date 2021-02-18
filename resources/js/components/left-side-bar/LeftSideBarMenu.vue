@@ -1,8 +1,8 @@
 <template>
     <div class="h-full flex flex-col">
-        <div v-for="icon in icons" v-bind:key="icon.name" class="mb-2 flex group">
-            <i v-bind:class="icon.class" class="text-lg self-center group-hover:text-green-400 transition duration-250 ease-in-out w-7 xl:w-8"></i>
-            <router-link v-bind:to="icon.route" class="text-lg self-center group-hover:text-gray-900 transition duration-250 ease-in-out">{{ icon.name }}</router-link>
+        <div v-for="icon in icons" v-bind:key="icon.name" class="mb-2 lg:mb-3 xl:mb-4 flex group">
+            <i v-bind:class="icon.class" class="text-md lg:text-lg self-center group-hover:text-green-400 transition duration-250 ease-in-out w-7 xl:w-8"></i>
+            <router-link v-bind:to="icon.route" class="text-md lg:text-lg self-center group-hover:text-black transition duration-250 ease-in-out">{{ icon.name }}</router-link>
         </div>
     </div>
 </template>

@@ -4,11 +4,14 @@
         <left-side-bar></left-side-bar>
         <right-side-bar></right-side-bar>
 
+        <!-- Main Content starts -->
         <div class="min-h-screen md:w-6/12 mx-auto bg-gray-100 z-0">
-            <div class="min-h-screen w-full mx-auto px-4 md:px-6 lg:px-10 xl:px-40 pt-6 lg:pt-10 xl:py-16">
+            <div class="min-h-screen w-full mx-auto px-4 pt-8 md:px-6 lg:px-10 lg:pt-10 xl:py-16 xl:px-40">
+
+
                 <!-- Post item starts -->
-                <div class="bg-white mb-8 md:mb-10 lg:mb-12 py-4 rounded-md shadow-md" v-for="post in posts" v-bind:key="post.id">
-                    <h4 class="text-sm font-semibold px-4 lg:px-6 mb-2">{{ post.user.name }}</h4>
+                <div class="bg-white mb-8 py-4 rounded-md shadow-md md:mb-10 lg:mb-12" v-for="post in posts" v-bind:key="post.id">
+                    <h4 class="text-sm font-semibold px-4 mb-2 lg:px-6">{{ post.user.name }}</h4>
                     <h5 class="text-lg font-bold px-4 mb-2 lg:px-6 text-gray-800">{{ post.title }}</h5>
                     <p class="text-md px-4 mb-4 lg:px-6">{{ post.body }}</p>
                     <div class="flex px-4 lg:px-6">
@@ -22,8 +25,12 @@
                         </div>
                     </div>
                 </div>
+                <!-- Post item ends -->
+
+
             </div>
         </div>
+        <!-- Main Content ends -->
     </div>
 </template>
 
