@@ -2,6 +2,8 @@
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,12 +33,26 @@ Route::get('home', function(){
 });
 
 Route::get('profile', function(){
-    // return User::where('email', 'amarimamovicv2@gmail.com')->get();
     return request()->user();
 })->middleware('auth:api');
 
 Route::post('signin', function(){
-    // return User::where('email', 'amarimamovicv2@gmail.com')->get();
-    // return request()->user();
-    return request();
+    request()->validate([
+        'email' => 'required|email',
+        'password' => 'required'
+    ]);
+
+    $data = request()->only('email', 'password');
+
+    if(!Auth::attempt($data)){
+        return [
+            'errors' => 'Wrong email or password',
+            'user' => null
+        ];
+    }else{
+        return [
+            'errors' => null,
+            'user' => App\Models\User::where('email', '=', request()->email)->get()
+        ];
+    }
 });

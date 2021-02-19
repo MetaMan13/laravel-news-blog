@@ -2036,18 +2036,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      email: '',
-      password: '',
+      form: {
+        email: '',
+        password: ''
+      },
+      errors: null,
+      user: null,
       ableToSubmit: false
     };
   },
   methods: {
     validateForm: function validateForm() {
+      var _this = this;
+
       console.log('hewo');
-      axios.post('http://localhost:3000/api/signin?').then(console.log)["catch"](console.log);
+      axios.post('http://localhost:3000/api/signin', this.form).then(function (response) {
+        _this.errors = response.data.errors;
+
+        if (response.data.user != null) {
+          _this.user = response.data.user;
+
+          _this.updateGlobalUser();
+        }
+      });
+    },
+    clearErrors: function clearErrors() {
+      this.errors = null;
+    },
+    updateGlobalUser: function updateGlobalUser() {
+      if (this.user == null) {
+        console.log('No user logged in');
+      } else {
+        console.log("Current logged user: ".concat(this.user[0].name));
+      }
     }
   }
 });
@@ -2272,7 +2299,9 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.use(vue_router__WEBPACK_IMPORTED_MODULE
 var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   el: '#app',
   router: new vue_router__WEBPACK_IMPORTED_MODULE_3__.default(_routes__WEBPACK_IMPORTED_MODULE_0__.default),
-  created: function created() {}
+  data: {
+    user: null
+  }
 });
 
 /***/ }),
@@ -3422,7 +3451,11 @@ var render = function() {
           "form",
           {
             staticClass: "mt-8 space-y-6",
-            attrs: { action: "#", method: "POST", autocomplete: "off" },
+            attrs: {
+              action: "http://localhost:3000/api/signin",
+              method: "POST",
+              autocomplete: "off"
+            },
             on: {
               submit: function($event) {
                 $event.preventDefault()
@@ -3448,8 +3481,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.email,
-                      expression: "email"
+                      value: _vm.form.email,
+                      expression: "form.email"
                     }
                   ],
                   staticClass:
@@ -3461,13 +3494,14 @@ var render = function() {
                     required: "",
                     placeholder: "Email address"
                   },
-                  domProps: { value: _vm.email },
+                  domProps: { value: _vm.form.email },
                   on: {
+                    keydown: _vm.clearErrors,
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.email = $event.target.value
+                      _vm.$set(_vm.form, "email", $event.target.value)
                     }
                   }
                 })
@@ -3485,8 +3519,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.password,
-                      expression: "password"
+                      value: _vm.form.password,
+                      expression: "form.password"
                     }
                   ],
                   staticClass:
@@ -3498,17 +3532,33 @@ var render = function() {
                     required: "",
                     placeholder: "Password"
                   },
-                  domProps: { value: _vm.password },
+                  domProps: { value: _vm.form.password },
                   on: {
+                    keydown: _vm.clearErrors,
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.password = $event.target.value
+                      _vm.$set(_vm.form, "password", $event.target.value)
                     }
                   }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _vm.errors != null
+                ? _c(
+                    "div",
+                    {
+                      staticClass:
+                        "pt-2 pb-2 transition ease-in-out duration-200"
+                    },
+                    [
+                      _c("p", { staticClass: "text-red-400 text-xs" }, [
+                        _vm._v("Wrong email or password")
+                      ])
+                    ]
+                  )
+                : _vm._e()
             ]),
             _vm._v(" "),
             _vm._m(1),
@@ -3518,8 +3568,8 @@ var render = function() {
                 "button",
                 {
                   staticClass:
-                    "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400",
-                  attrs: { disabled: !_vm.ableToSubmit, type: "submit" }
+                    "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400",
+                  attrs: { disabled: _vm.ableToSubmit, type: "submit" }
                 },
                 [
                   _c(
@@ -3611,7 +3661,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "flex items-center" }, [
         _c("input", {
           staticClass:
-            "h-4 w-4 text-green-400 focus:ring-indigo-500 border-gray-300 rounded",
+            "h-4 w-4 text-green-400 focus:ring-green-400 border-gray-300 rounded",
           attrs: { id: "remember_me", name: "remember_me", type: "checkbox" }
         }),
         _vm._v(" "),
